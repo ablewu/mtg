@@ -74,6 +74,7 @@ private:
   int  m_userId;
   s_handle_t m_conf_handle;
   int  m_ready;
+	/*
 private:
   
   int (*pfun_wx_mtg_init)(char*,char*,unsigned short,unsigned short);
@@ -90,7 +91,7 @@ private:
   void (*pfun_wx_mtg_timer)();
   int (*pfun_wx_mtg_detect_stream)(s_handle_t,BYTE);
   int (*pfun_wx_mtg_rejoin)(s_handle_t);
-  
+	*/
 };
 
 #endif	// MTG_SDK_H

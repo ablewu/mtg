@@ -1,14 +1,15 @@
-CC=/home/muti/CodeSourcery/Sourcery_G++_Lite/bin/arm-none-linux-gnueabi-g++
+CC=clang++
 OUT_EXE=test_mtg
+CFLAGS=-m32
 
 $OUT_EXE:app.o mtgsdk.o
-	$(CC) -o $(OUT_EXE) app.o mtgsdk.o -lpthread -ldl
+	$(CC) -o $(OUT_EXE) $(CFLAGS) app.o mtgsdk.o -lpthread -ldl -L. -lavnMtgLib
 
 app.o:app.cpp
-	$(CC) -c app.cpp
+	$(CC) -c $(CFLAGS) app.cpp
 
 mtgsdk.o:mtgsdk.h mtgsdk.cpp
-	$(CC) -c mtgsdk.cpp
+	$(CC) -c $(CFLAGS) mtgsdk.cpp
 
 .PHONY:
 clean:
